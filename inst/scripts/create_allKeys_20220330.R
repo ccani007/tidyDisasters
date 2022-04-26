@@ -13,8 +13,9 @@ library(lubridate)
 library(tidyverse)
 
 allEventsMap_df <- readRDS(
-  file = "data_processed/database_key_fema_emdat_20211027.RDS"
+  file = "inst/extdata/key_fema_emdat.RDS"
 )
+# 36,224,806 x 5
 
 allEventsMap2_df <-
   allEventsMap_df %>%
@@ -25,7 +26,13 @@ allEventsMap2_df <-
   mutate(femaID_trunc = str_remove(femaID, pattern = "_[^.]*$")) %>%
   mutate(smashedID = paste0(femaID_trunc, "_", emdatID)) %>%
   select(-femaID_trunc)
+# 36,224,806 x 6
 
+
+###  Create Unique Key for All Events  ###
+# This key will have the year and month of the event start, the state of the
+#   event, and a ticker to differentiate events that have the same Y-M-State
+#   combination (most times, the ticker is "01")
 allKeys_df <-
   allEventsMap2_df %>%
   group_by(smashedID) %>%
@@ -54,6 +61,8 @@ allKeys_df <-
   select(femaID, emdatID, eventKey) %>%
   distinct() %>%
   arrange(eventKey)
+# 498,188 x 3
 
-saveRDS(allKeys_df, file = "data_processed/all_keys_20220330.rds")
+usethis::use_data(allKeys_df)
+
 

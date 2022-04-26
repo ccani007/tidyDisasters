@@ -1,7 +1,7 @@
-#' @title all_keys
+#' @title allKeys_df
 #'
 #' @description This data contains the original keys from the FEMA, GTD and
-#'              EMDAT data set and a universal key created by the authors.
+#'   EMDAT data set and a universal key created by the authors.
 #' @docType data
 #'
 #' @usage data(all_keys)
@@ -13,4 +13,4 @@
 #'    \item{eventKEY}{The created ID created by the authors to inform the year,
 #'          state, and number of disasters in that particular place}
 #'   }
-"all_keys"
+"allKeys_df"
