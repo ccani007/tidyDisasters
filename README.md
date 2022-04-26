@@ -1,6 +1,6 @@
 ---
 title: "Tidy Disaster Data"
-author: "Catalina Cañizares and Gabriel Odom"
+author: "Catalina Cañizares, Mark J. Macgowan, Gabriel Odom"
 date: 2022-03-16
 ---
 
