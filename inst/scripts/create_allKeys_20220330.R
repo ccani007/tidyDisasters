@@ -58,11 +58,11 @@ allKeys_df <-
       select(smashedID, femaID, emdatID),
     by = "smashedID"
   ) %>%
-  select(femaID, emdatID, eventKey) %>%
+  select(femaID, emdatID, smashedID, eventKey) %>%
   distinct() %>%
   arrange(eventKey)
-# 498,188 x 3
+# 498,188 x 4
 
-usethis::use_data(allKeys_df)
+usethis::use_data(allKeys_df, overwrite = TRUE)
 
 
