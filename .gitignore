@@ -8,9 +8,6 @@
 .Rhistory
 .Rapp.history
 
-# Session Data files
-.RData
-*.RData
 
 # User-specific files
 .Ruserdata
@@ -54,14 +51,6 @@ Thumbs.db
 # R projects 
 *.Rproj
 
-# Directories
-docs/
-data/
-development/
-macros/
-output/
-sasdata/
-libs/
 
 # Exclude .Rmd output
 *.html
