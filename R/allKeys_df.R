@@ -4,7 +4,7 @@
 #'   EMDAT data set and a universal key created by the authors.
 #' @docType data
 #'
-#' @usage data(all_keys)
+#' @usage data(allKeys_df)
 #'
 #' @format A tibble with
 #' \describe{

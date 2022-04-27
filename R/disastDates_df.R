@@ -7,7 +7,7 @@
 #'   
 #' @docType data
 #'
-#' @usage data(disasterDates_df)
+#' @usage data(disastDates_df)
 #'
 #' @format A tibble with
 #' \describe{
@@ -16,4 +16,4 @@
 #'   \item{eventStart}{Year, month and day an event started}
 #'   \item{eventEnd}{Year, month and day an event ended}
 #' }
-"allKeys_df"
+"disastDates_df"

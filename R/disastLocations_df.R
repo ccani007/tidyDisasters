@@ -14,4 +14,4 @@
 #'   \item{state}{Abbreviation of the state where an event happened}
 #'   \item{county}{Name of the county the disaster}
 #' }
-"allKeys_df"
+"disastLocations_df"
