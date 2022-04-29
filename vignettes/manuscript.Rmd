@@ -1,0 +1,21 @@
+---
+title: "manuscript"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{manuscript}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(tidyDisasters)
+```
+
+This Vignette is created to write the short article 
