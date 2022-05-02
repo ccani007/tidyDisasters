@@ -118,3 +118,4 @@ _bookdown_files/
 *.zip
 *.Zip
 *.ZIP
+inst/doc
