@@ -1,6 +1,7 @@
 ---
 title: "manuscript"
 output: rmarkdown::html_vignette
+bibliography: r-references.bib
 vignette: >
   %\VignetteIndexEntry{manuscript}
   %\VignetteEngine{knitr::rmarkdown}
@@ -19,7 +20,12 @@ library(tidyDisasters)
 ```
 
  
-Global and national datasets reporting mass casualty events are the foundation for natural disaster and terrorism research. Several global mass casualty datasets have been developed by different groups, such as the Centre for Research on the Epidemiology of Disasters (Belgium), the National Consortium for the Study of Terrorism and Responses to Terrorism (United States of America), and FEMA's National Emergency Management Information System (United States of America). This datasets have be used to produce research related to  mass casualty events beyond the report of trends. For example, EMDAT has beed used to explore the correlation of events with changes in ischemic heart disease mortality and hospital resilience to disasters, FEMA has produced reports of Hazard Mitigation Assistance (HMA) 
+Global and national datasets reporting mass casualty events are the foundation for natural disaster and terrorism research. Several global mass casualty datasets have been developed by different groups, such as the Centre for Research on the Epidemiology of Disasters (Belgium), that maintain the Emergency Events Database (EM-DAT); the National Consortium for the Study of Terrorism and Responses to Terrorism (United States of America), that hold the Global Terrorism Database (GTD), and FEMA's National Emergency Management Information System (United States of America), that administer the FEMA Disaster Declarations Summary. Several publications can be found reporting results from analyses bases on this data sets. For example, a recent report using the EM-DAT found that that the trend in the occurrence of natural disasters was positively correlated with trends in the ischemic heart disease mortality among females [@Huang2021]. Another current publication using the GTD constructed five multiclass classification models for the prediction of terrorist organizations that perpetrated terrorist attack,  and it is useful to provide decision support for the prevention and control of antiterrorism organizations [@Xi2021]. And FEMA 
+
+However they are limited in
+Whereas FEMA reports the county-level location of a natural event, EMDAT estimates the number of killed and wounded of that natural event, and the GTD contains the terrorism events
+
+exmples of research related to this data sets can be found FEMA has published several reports inluding  Hazard Mitigation Assistance (HMA), fire incidents for states and ocuntues and histortical floos risks and costs: EMDAT, has also published disaster events trends but has taken its analysis further to explore aspects such as the correlation of events with changes in ischemic heart disease mortality and hospital resilience to disasters: GTD 
 
 This study created a new dataset by merging the data sets maintained by the groups mentioned above: the Emergency Events Database (EM-DAT), the Global Terrorism Database (GTD), and the FEMA Disaster Declarations Summary. The merge was conducted for disasters in the U.S territory and reported three or more human casualties. The merge process was based on data equivalence criteria, meaning that natural disasters and terrorism events reported were matched on state and county level and by the reported date or range of dates. To reach the homogenization process, data cleaning for each data set was needed. Using the Tidyverse package for R Studio, spelling corrections, date formats, separating variables into columns, mapping of U.S states to counties, and imputations were performed. The result is a queryable data set that unites information from three sources that complement each other. Whereas FEMA reports the county-level location of a natural event, EMDAT estimates the number of killed and wounded of that natural event, and the GTD contains the terrorism events. This new data set can be used to relate mass casualties to their short and long-term consequences beyond the damage itself. Therefore, relating mental and physical health consequences and economic and political effects, or data that is of interest, can be matched to this new data set by location (state or county level) and date. 
 
