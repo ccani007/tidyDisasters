@@ -31,7 +31,7 @@ Description:
      that report 3 or more people killed in the United States of America.
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.1
 Depends: 
     R (>= 3.1)
 LazyData: false

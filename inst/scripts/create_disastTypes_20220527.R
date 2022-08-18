@@ -29,7 +29,7 @@ clean_fema <- readRDS(
 
 unique_emdat_events_df <- 
   clean_emdat %>% 
-  select(emdatID = event_id, incident_type) %>% 
+  select(emdatID = region_id, incident_type) %>% 
   distinct()
 # 549 x 2
 
@@ -114,7 +114,7 @@ emdat_hazard_cluster_df <-
     )
   ) 
 
-# Checked with tables if the tranformation was done correctly
+# Checked with tables if the transformation was done correctly
 table(emdat_hazard_cluster_df$hazard_type)
 table(emdat_hazard_cluster_df$hazard_cluster)
 
@@ -124,12 +124,20 @@ table(emdat_hazard_cluster_df$hazard_cluster)
 #  first as the broad hazard type and then sub-classified them in the hazard 
 #  cluster. 
 
+subset_fema_df <-
+  clean_fema %>% 
+  select(femaID = event_id, nKilled = nkill, nWounded = nwound) %>% 
+  distinct() %>% 
+  mutate(hasCasualty = !is.na(nKilled) | !is.na(nWounded)) %>% 
+  filter(hasCasualty) %>% 
+  select(-hasCasualty)
+
+
 unique_fema_events_df <- 
   clean_fema %>%
-  mutate(EventUniqueId = substr(event_id, 1, 6)) %>% 
-  select(femaID = EventUniqueId, incident_type) %>%
-  distinct() 
-# 816 * 2
+  select(femaID = event_id, incident_type) %>% 
+  distinct()
+# 258634
 
 rename_hazard_type_fema <- 
   c("Armed Assault" = "SOCIETAL", 
@@ -235,10 +243,27 @@ table(fema_hazard_cluster_df$hazard_cluster)
 
 #####  Map All disaster types data to Unique Key  ###
 
-# I do not know how!! 
 
 disastType1_df <- 
-  emdat_hazard_cluster_df %>% 
-  left_join(allKeys_df, by = "emdatID")
-# 549 x 3
+  allKeys_df %>% 
+  inner_join(emdat_hazard_cluster_df, by = "emdatID") %>% 
+  select(eventKey, incident_type, hazard_type, hazard_cluster) %>% 
+  distinct()
+# 8258 x 4
+
+disastType2_df <- 
+  allKeys_df %>% 
+  inner_join(fema_hazard_cluster_df, by = "femaID") %>% 
+  select(eventKey, incident_type, hazard_type, hazard_cluster) 
+  distinct()
+# 498188 x 4
+  
+  
+disastTypes_df <-
+  bind_rows(disastType1_df, disastType2_df) %>% 
+  arrange(eventKey) %>% 
+  distinct()
+# 10412 x 4
+
+usethis::use_data(disastTypes_df)
 
