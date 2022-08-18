@@ -24,7 +24,7 @@ clean_fema <- readRDS(
 ##### EMDAT ######
 # We created the list of unique type of events in the EMDAT to categorize them
 #  according to the Hazard Definition and Classification Review Technical Report
-#  first as the broad hazard type and then sun-classified them in the hazard 
+#  first as the broad hazard type and then sub-classified them in the hazard 
 #  cluster. 
 
 unique_emdat_events_df <- 
@@ -67,28 +67,31 @@ rename_hazard_type <-
 rename_hazard_cluster <- 
   c("Drought:Drought:NA" = "Precipitation-related", 
     "Extreme temperature:Cold wave:NA" = "Temperature-related", 
-    "Epidemic:Parasitic disease:NA" = "Infectious diseases (human and animal)", # CHECK
+    "Epidemic:Parasitic disease:NA" = "Infectious diseases (human and animal)", 
     "Extreme temperature:Severe winter conditions:Snow/Ice" = "Precipitation-related", 
     "Flood:NA:NA" = "Flood", 
-    "Landslide:Landslide:NA" = "Shallow geohazard", # CHECK
+    "Landslide:Landslide:NA" = "Shallow geohazard", 
     "Storm:Convective storm:Derecho" = "Wind-related", 
     "Storm:Convective storm:Lightning/Thunderstorms" = "Convective-related", 
     "Storm:Convective storm:Sand/Dust storm" = "Lithometeors", 
     "Storm:Convective storm:Tornado" = "Wind-related", 
-    "Storm:Extra-tropical storm:NA" = "Pressure-related", # CHECK
+    "Storm:Extra-tropical storm:NA" = "Pressure-related", 
     "Storm:Tropical cyclone:NA" = "Wind-related", 
     "Wildfire:Land fire (Brush, Bush, Pasture):NA" = "Environmental degradation (Forestry)",
     "Earthquake:Ground movement:NA" = "Seismogenic (earthquakes)", 
-    "Epidemic:Viral disease:NA" = "Infectious diseases (human and animal)", # CHECK
+    "Epidemic:Viral disease:NA" = "Infectious diseases (human and animal)", 
     "Extreme temperature:Heat wave:NA" = "Temperature-related", 
     "Flood:Flash flood:NA" = "Flood",
     "Flood:Riverine flood:NA" = "Flood", 
-    "Landslide:Mudslide:NA" = "Shallow geohazard", # CHECK
+    "Landslide:Mudslide:NA" = "Terrestrial",
     "Storm:Convective storm:Hail" = "Precipitation-related", 
     "Storm:Convective storm:NA" = "Convective-related", 
     "Storm:Convective storm:Severe storm" = "Convective-related",
     "Storm:Convective storm:Winter storm/Blizzard" = "Precipitation-related", 
-    "Storm:NA:NA" = "Precipitation-related", # Check
+    "Storm:NA:NA" = "Precipitation-related", 
+    # 2007-0663-USA, 2007-0581-USA, 2018-0129-USA, 2003-0829-USA
+    #  Classified as precipitation though several events with this category
+    #  Are related to hail, snow and floods. 
     "Wildfire:Forest fire:NA" = "Environmental degradation (Forestry)",
     "Wildfire:NA:NA" = "Environmental degradation (Forestry)")
 
@@ -130,27 +133,38 @@ unique_fema_events_df <-
 
 rename_hazard_type_fema <- 
   c("Armed Assault" = "SOCIETAL", 
-    "Chemical" = "SOCIETAL", # Check 
-    "Dam/Levee Break" = "METEOROLOGICAL and HYDROLOGICAL", # Check
+    "Chemical" = "CHEMICAL", 
+    "Dam/Levee Break" = "TECHNOLOGICAL", 
     "Earthquake" = "GEOHAZARD", 
     "Fire" = "ENVIRONMENTAL", 
     "Flood" = "METEOROLOGICAL and HYDROLOGICAL",
     "Hijacking" = "SOCIETAL", 
     "Hostage Taking (Kidnapping)" = "SOCIETAL",
     "Hurricane" = "METEOROLOGICAL and HYDROLOGICAL", 
-    "Other" = "OTHER", # Check
+    "Other" = "OTHER", 
     "Severe Storm(s)" = "METEOROLOGICAL and HYDROLOGICAL", 
     "Terrorist" = "SOCIETAL", 
-    "Toxic Substances" = "CHEMICAL", # Check
+    "Toxic Substances" = "CHEMICAL", 
     "Unarmed Assault" = "SOCIETAL", 
     "Bombing/Explosion" = "SOCIETAL", 
     "Coastal Storm" = "METEOROLOGICAL and HYDROLOGICAL", 
     "Drought" = "METEOROLOGICAL and HYDROLOGICAL",
     "Facility/Infrastructure Attack" = "SOCIETAL", 
-    "Fishing Losses" =  "ENVIRONMENTAL", # Check
+    "Fishing Losses" =  "ENVIRONMENTAL", 
+  # Ii is not categorized under chemical or biological given that the reasons
+  #  related to the fishing loss are toxic algae and "El nino" (warmer than 
+  #  normal sea surface temperatures)
     "Freezing" = "METEOROLOGICAL and HYDROLOGICAL",
     "Hostage Taking (Barricade Incident)" = "SOCIETAL",
-    "Human Cause" = "SOCIETAL", # Check
+    "Human Cause" = "SOCIETAL", 
+  # The examples found on the data set show that the human cause disasters 
+  #  belong to the societal category given its relationship with conflict 
+  #  situations. 
+  # The cases are two bombings and the mariel boatlift. Information about
+  #  the events are depicted in the following three links
+  # https://www.fbi.gov/history/famous-cases/oklahoma-city-bombing
+  # https://www.state.gov/1993-world-trade-center-bombing/
+  # https://www.fema.gov/disaster/3079
     "Mud/Landslide" = "GEOHAZARD", 
     "Severe Ice Storm" = "METEOROLOGICAL and HYDROLOGICAL",
     "Snow" = "METEOROLOGICAL and HYDROLOGICAL",
@@ -160,33 +174,44 @@ rename_hazard_type_fema <-
     
 rename_hazard_cluster_fema <- 
   c("Armed Assault" = "Conflict", # Chceck 
-    "Chemical" = "Conflict", # Check 
-    "Dam/Levee Break" = "Flood", # Check
+    "Chemical" = "Other chemical hazards and toxins", 
+    "Dam/Levee Break" = "Construction/ Structural failure", 
     "Earthquake" = "Seismogenic (earthquakes)", 
     "Fire" = "Environmental degradation (Forestry)", 
     "Flood" = "Flood",
     "Hijacking" = "Behavioural", # Chceck
     "Hostage Taking (Kidnapping)" = "Behavioural", # Chceck
     "Hurricane" = "Pressure-related", 
-    "Other" = "OTHER", # Check
-    "Severe Storm(s)" = "Precipitation-related", # Check 
-    "Terrorist" = "Conflict", # Check 
-    "Toxic Substances" = "Other chemical hazards and toxins", # Check
+    "Other" = "OTHER", 
+    # Other is not a category in the technical report. 
+    #  The events that are under the other category in FEMA vary from the loss
+    #  of the space shuttle Columbia to power outwage, therefore I believe
+    #  leaving this category open is fine. 
+    "Severe Storm(s)" = "Precipitation-related", 
+    # The events are all related to rain, flooding and ice, so it 
+    #  is alright to categorize it as precipitation related 
+    "Terrorist" = "Conflict", 
+    "Toxic Substances" = "Other chemical hazards and toxins", 
     "Unarmed Assault" = "Conflict", 
     "Bombing/Explosion" = "Behavioural", 
-    "Coastal Storm" = "Flood", # Check
+    "Coastal Storm" = "Wind-related", 
+    # The examples on the data set are tropical storms such as 
+    #  "Tropical Storm Barry", "Tropical Storm Fay" 
     "Drought" = "Precipitation-related",
     "Facility/Infrastructure Attack" = "Behavioural", 
-    "Fishing Losses" =  "Environmental degradation", # Check
+    "Fishing Losses" =  "Environmental degradation", 
     "Freezing" = "Temperature-related",
     "Hostage Taking (Barricade Incident)" = "Behavioural",
-    "Human Cause" = "Behavioural", # Check
+    "Human Cause" = "Behavioural", 
     "Mud/Landslide" = "Shallow geohazard", 
     "Severe Ice Storm" = "Precipitation-related",
     "Snow" = "Precipitation-related",
     "Tornado" = "Wind-related",
     "Tsunami" = "Shallow geohazard", 
     "Volcano" = "Volcanogenic (volcanoes and geothermal)")
+
+# Create a codebook for classifying societal problems, mention this as a 
+#  recommendation in the paper. 
 
 fema_hazard_cluster_df <- 
   unique_fema_events_df %>%
