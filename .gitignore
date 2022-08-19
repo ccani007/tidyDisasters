@@ -41,6 +41,7 @@ Thumbs.db
 **/figure-html/
 # Exclude Text
 *.txt
+!inst/extdata/un_disaster_types_annex6.txt
 *.Txt
 *.TXT
 # Exclude Excel
