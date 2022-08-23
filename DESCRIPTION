@@ -1,6 +1,6 @@
 Package: tidyDisasters
 Title: Disaster data set including FEMA and EMDAT information
-Version: 0.0.0.9001
+Version: 0.0.0.9002
 Authors@R: 
     c(
       person(
@@ -31,9 +31,9 @@ Description:
      that report 3 or more people killed in the United States of America.
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.1
 Depends: 
-    R (>= 3.1)
+    R (>= 3.5)
 LazyData: false
 Suggests: 
     rUM,
