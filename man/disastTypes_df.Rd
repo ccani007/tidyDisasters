@@ -12,12 +12,11 @@ state, and number of disasters in that particular place}
 \item{incident_type}{It is the original type of disaster that the FEMA
 and EMDAT data sets reported}
 \item{hazard_type}{It is the related broad classification disaster type
-that was assigned by the authors according to the original incident type
-reported by FEMA or EMDAT. The category was assigned based on the
-Technical report}
+The category was assigned based on the Technical report by matching it to
+the hazard cluster that was assigned by the authors}
 \item{hazard_cluster}{It is the related sub type classification assigned by
 the authors according to the original incident type reported by FEMA or
-EMDAT, and acciording to the broad classification that was already
+EMDAT, and according to the broad classification that was already
 assigned}
 }
 }
