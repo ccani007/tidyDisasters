@@ -24,25 +24,18 @@ library(tidyDisasters)
 ```
 
  
+The Sendai Framework for Disaster Risk Reduction 2015–2030 aims to achieve the reduction of disaster risk and losses in lives, physical, social, cultural and environmental assets of persons over the next 15 years [@undrr_2015]. In order for this aim to be effective, disaster risk reduction has to rely in timely and reliable information and scientific data [@Migliorini2019]. However, these data are typically dispersed, stored in different data bases owned by various government agencies, research centers, private organizations and a wide variety of stakeholders [@li2019;@Faiella2022;]. 
 
-Research on disaster risk relies heavily on scientific data. To date, large amounts of disaster-related data exist, such as the Emergency Events Database (EM-DAT) maintained by the Centre for Research on the Epidemiology of Disasters (Belgium); the Global Terrorism Database (GTD) by the National Consortium for the Study of Terrorism and Responses to Terrorism (United States of America); and FEMA's National Emergency Management Information System (United States of America), that administers the FEMA Disaster Declarations Summary. 
+The highly dispersed data makes it difficult for  researchers to discover and use all relevant data needed for modeling and predicting future disasters and underlying risk factors for vulnerable territories [@li2019]. This data gap is not new, this discussion has been present in  literature since 1945 [@Faiella2022], the Disaster Risk Management Knowledge Centre of the EU Commission has published several reports that highlight the  limitations, inconsistencies, and gaps of current datasets [@Faiella2022], and the academic community has constantly advocated for the importance of the interconnection of datasets, given that they come from different scientific disciplines (hydrology, meteorology, climate) [@li2019].
 
-However, these data are typically dispersed, stored in different data bases owned by various government agencies, research centers, private organizations and a wide variety of stakeholders [@li2019]. The highly dispersed data makes it difficult for  researchers to discover and use all relevant data needed for a certain study. In fact, when they are able to find the appropriate data it sometimes come from different data sets that lack of single identifier which precludes researchers to successfully select, transfer, interpret and use the data [@li2019]. 
+Efforts have been done to address this this gap. For example, the Linked Open Data for Global Disaster Risk Research (LOGD) approved by the the CODATA 28th General Assembly (Taipei, 2012) is a task force dedicated to reducing the barriers that researchers face due to the limited interconnection of disaster-related data [@li2019]. Another initiative is the The Loss Data Enhancement for Disaster Risk Reduction and Climate Change Adaptation  project (LODE) which  has contributed to the data science in disaster risk by analyzing the current weaknesses in post-disaster damage and loss data management and has developed an information system for improved data collection, storage and retrieval to serve multiple applications for mitigation and preparedness [@Faiella2022].
+ http://www.codata.info/taskgroups/TGdisasterrisk/
+ 
+In order to support these initiatives and to keep advocating for the need for open data and data interconnectivity, that is  accessible and usable by researchers, decision-makers and the public, to fully understand the cause and impact of disaster events without getting lost in the “sea” of distributed and disparate data, there is a need for efforts to merge multiple information resources into a single queryable data base.
 
-The need for open data and data interconnectivity, i.e. data which are accessible and usable by researchers, decision-makers and the public, is most critical in the area of disaster risk research, management and mitigation.
-In-depth scientific analysis of disaster data requires management and acquisition patterns that support interconnection of dispersed scientific data related to disaster risk assessment and reduction. Disaster risk researchers face perhaps a greater challenge to find relevant datasets in a “sea” of distributed and disparate data resources. Therefore, gaps in data infrastructure, data sharing policies and data use governance should be addressed to unleash the potential of disaster risk research in helping regions, especially the developing countries, to improve risk assessment, reduction and management.
-
-
-This type of research is valuable and generates knowledge regarding the impact of disasters on humankind and society and are tools to develop evidence-based prevention and intervention programs. Also, they are in line with the The Sendai Framework for Disaster Risk Reduction 2015–2030 aim “To strengthen technical and scientific capacity to capitalize on and consolidate existing knowledge and to develop and apply methodologies and models to assess disaster risks, vulnerabilities and exposure to all hazards” (UNISDR 2015). However, this studys are subject to the 
-
-
-
-Task group of LODGD will study the mechanism for connecting such data to enable easier and faster discovery and access, and significantly reduce the barriers that researchers are facing today due to limited interconnection of various disaster-related data http://www.codata.info/taskgroups/TGdisasterrisk/
-
-
-
-
-Therefore, this package intended to merge the  EM-DAT, GTD, and FEMA data sets to produce a set of relational databases in a fifth normal form  that unites information from three sources that complement each other. Whereas FEMA reports the county-level location of a natural event, EMDAT estimates the number of killed and wounded by that natural event, and the GTD contains the terrorism events. 
+To date, large amounts of disaster-related data exist for the US territory, such as the Emergency Events Database (EM-DAT) maintained by the Centre for Research on the Epidemiology of Disasters (Belgium); the Global Terrorism Database (GTD) by the National Consortium for the Study of Terrorism and Responses to Terrorism (United States of America); and FEMA's National Emergency Management Information System (United States of America), that administers the FEMA Disaster Declarations Summary.
+ 
+Taking into account the lack of interconnection between large data sets and the need for quality information for effective monitoring of the Sendai Framework and the development of evidence based intervention, this package intended to merge the  EM-DAT, GTD, and FEMA data sets to produce a set of relational databases in a fifth normal form  that unites information from three sources that complement each other. Whereas FEMA reports the county-level location of a natural event, EMDAT estimates the number of killed and wounded by that natural event, and the GTD contains the terrorism events. 
 
 The merge process was based on data equivalence criteria, meaning that the reported natural disasters and terrorism events were matched at the state and county level and by the reported date or range of dates. Data cleaning for each data set was needed to reach the homogenization process. Using the Tidyverse package [@Wickham2019] for R Studio.
 
@@ -53,6 +46,8 @@ Additionally, the
 This new data set can be used to relate mass casualties to their short and long-term consequences beyond the damage itself. Therefore, relating mental and physical health consequences and economic and political effects, or data of interest, can be matched to this new data set by location (state or county level) and date.
 
 Questions that may be answered with this new data set include
+
+
 
 ```{r}
  
