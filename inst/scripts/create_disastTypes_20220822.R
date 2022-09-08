@@ -5,7 +5,7 @@
 # Now that we have a unique key for all events (by state, year, and month), we
 #  will create a table of the type of disasters based on the classification 
 #  of the Hazard Definition and Classification Review Technical Report
-#  published by the UN Office for Disaster Risk Reduction (2020) 
+ published by the UN Office for Disaster Risk Reduction (2020)
 #  Annex 6 page 72. 
 #  (https://www.undrr.org/publication/hazard-definition-and-classification-review)
 
@@ -164,4 +164,5 @@ disastTypes_df <-
 # 10412 x 4
 
 usethis::use_data(disastTypes_df, overwrite = TRUE)
-
+disastTypes_df %>% count(hazard_type
+                         )

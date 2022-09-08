@@ -1,0 +1,130 @@
+---
+title: "examples"
+author: "Catalina Canizares, Mark Macgowan, Gabriel Odom"
+output: rmarkdown::html_vignette
+bibliography: r-references.bib
+vignette: >
+  %\VignetteIndexEntry{examples}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE
+)
+
+```
+
+```{r setup, include=FALSE}
+library(tidyDisasters)
+library(lubridate)
+library(tidyverse)
+```
+
+
+## Examples
+
+With the data that is contained in the package it is possible to query and plot information easily. Examples are given bellow. 
+
+### Example 1: Considers time trends and U.S geography affected
+The first example explores the maximum number of counties affected by a single severe ice and snow storm. By joining the cleaned data sates of locations (disastLocations_df), types of events (disastTypes_df)  and dates (disastDates_df) we were able to plot and find the 1993 "Storm of the Century" that affected almost 800 counties [@NOAA2020]  and the 1996 blizzard that affected around 500 counties and is remembered as the greatest snowstorm in terms of the amount of snow that fell [@Stachelski]. 
+
+```{r example-1, echo=TRUE, fig.dim = c(6, 4), dev='svg'}
+data("disastLocations_df")
+data("disastTypes_df")
+data("disastDates_df")
+
+
+disastLocations_df %>%
+  left_join(disastTypes_df) %>%
+  left_join(disastDates_df) %>%
+  mutate(Year = year(eventStart)) %>% 
+  filter(incident_type %in% c("Severe Ice Storm", "Snow")) %>%
+  group_by(state, county, Year) %>%
+  summarise(Frozen = n() >= 1L, .groups = "keep") %>%
+  group_by(Year) %>%
+  summarise(Count = sum(Frozen)) %>%
+  ggplot() +
+  aes(x = Year, y = Count) +
+  labs(
+    title = "Number of Counties Affected by Snow Storms Since the 90s",
+    caption = "Data from the tidyDisasters R Package",
+    y = "No. Counties Frozen"
+  ) +
+  theme_classic() +
+  geom_point()
+
+```
+
+### Example 2: Considers time trends and Hazard Clusters 
+
+Another example of the usage of this package is this plot that evidences the trend on  six different types of hazard clusters.
+
+```{r example-2, echo=TRUE, fig.dim = c(6, 4), dev='svg'}
+
+  disastTypes_df %>%
+  left_join(disastDates_df) %>%
+  mutate(Year = year(eventStart)) %>% 
+  filter(
+    hazard_cluster %in% c(
+      "Precipitation-related", " Wind-related",
+      "Environmental degradation (Forestry)", "Flood", "Convective-related",
+      "Pressure-related"
+    )
+  ) %>%
+  group_by(Year, hazard_cluster) %>%
+  count(hazard_cluster) %>%
+  ggplot() +
+  aes(x = Year, y = n, color = hazard_cluster) +
+  labs(
+    title = "Disasters tendency since 1990",
+    caption = "Data from the tidyDisasters R Package",
+    y = "Count"
+  ) +
+  geom_smooth(method = "lm", se = FALSE, linetype = "dashed") +
+  geom_point() +
+  facet_wrap(~hazard_cluster, scales = "free_y") +
+  theme_classic() +
+  theme(legend.position = "none") 
+  
+  
+
+```
+
+### ### Example 3: Considers terrorist attacs
+Finally, another example from this data show that conflict related disasters are becoming more harmful by year, more people are being killed. 
+
+```{r example-3, echo=TRUE, fig.dim = c(6, 4), dev='svg'}
+data("disastCasualties_df")
+
+  disastTypes_df %>%
+  left_join(disastDates_df) %>%
+  left_join(disastCasualties_df) %>% 
+  mutate(Year = year(eventStart)) %>% 
+  filter(hazard_cluster == "Conflict") %>%
+  group_by(Year) %>%
+  summarize(count = sum(nKilled)) %>% 
+  ggplot() +
+  aes(x = Year, y = count) +
+  labs(
+    title = "Number of people Killed in Conflict Related Disasters",
+    caption = "Data from the tidyDisasters R Package",
+    y = "No. of people "
+  ) +
+  geom_smooth(method = "lm", se = FALSE, linetype = "dashed") +
+  geom_point() +
+  theme_classic() 
+  
+
+```
+
+## Discussion
+
+Finally, the cleaned and harmonized data sets can be used to relate mass casualties to their short and long-term consequences beyond the damage itself, because other data sets can be easily joined if there is state and county level information. Therefore, mental and physical health consequences, economic loss, or other variables of interest can be analyzed taking into account this already cleaned and joined data. 
+
+## References

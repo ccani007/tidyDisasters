@@ -37,16 +37,16 @@ unique_fema_events_df <-
 # 258634
     
 rename_hazard_cluster_fema <- 
-  c("Armed Assault" = "Conflict", # Chceck 
+  c("Armed Assault" = "Conflict", 
     "Chemical" = "Other chemical hazards and toxins", 
     "Dam/Levee Break" = "Construction/ Structural failure", 
     "Earthquake" = "Seismogenic (earthquakes)", 
     "Fire" = "Environmental degradation (Forestry)", 
     "Flood" = "Flood",
-    "Hijacking" = "Behavioural", # Chceck
-    "Hostage Taking (Kidnapping)" = "Behavioural", # Chceck
+    "Hijacking" = "Behavioural", 
+    "Hostage Taking (Kidnapping)" = "Behavioural", 
     "Hurricane" = "Pressure-related", 
-    "Other" = "OTHER", 
+    "Other$" = "OTHER", 
     # Other is not a category in the technical report. 
     #  The events that are under the other category in FEMA vary from the loss
     #  of the space shuttle Columbia to power outwage, therefore I believe
