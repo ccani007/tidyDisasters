@@ -1,6 +1,6 @@
 #' @title disastLocations_df
 #'
-#' @description This data contains the the states and counties where disasters 
+#' @description This data contains the states and counties where disasters 
 #'   have happened across the USA.  
 #'   
 #' @docType data
