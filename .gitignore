@@ -45,8 +45,8 @@ Thumbs.db
 *.Txt
 *.TXT
 # Exclude Excel
-*.xlsx
-*.xls
+# *.xlsx
+# *.xls
 # csv data
 *.csv
 *.CSV
