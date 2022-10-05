@@ -43,7 +43,7 @@ Taking into account the lack of interconnection between large data sets and the 
 
 ## Method
 
-The merge was conducted for disasters since January 1990 to 2020 in the 50 U.S. states (plus the District of Columbia and Puerto Rico) and for which three or more human casualties were reported [@bill]. The merge process was based on data equivalence criteria, meaning that the reported natural disasters and terrorism events were matched at the state and county level and by the reported date or range of dates. Data cleaning for each data set was needed to reach the homogenization process using the Tidyverse package [@Wickham2019] for R Studio.
+The merge was conducted for disasters since January 1990 to 2020 in the 50 U.S. states (plus the District of Columbia and Puerto Rico) and for which three or more human casualties were reported [@bill]. The merge process was based on data equivalence criteria, meaning that the reported natural disasters and terrorism events were matched at the state and county level and by the reported date or range of dates. Data cleaning for each data set was needed to reach the homogenization process using the `tidyverse` package [@Wickham2019] for R Studio.
 
 Spelling corrections for states and counties had to be performed (see table `disastLocation_df`); date formats had to be homogenized between the data sets to match the year, month, day, and format (see table `distastDates_df`); imputation for end dates was conducted for fire incidents where no end date was reported by calculating the average of days fires lasted since 1991 according to FEMA; separation of variables into columns was performed, especially for the EM-DAT, given that in one single cell the names of country, states or county where reported. Finally, a mapping of U.S. states to counties and imputations was performed. Once the data sets were cleaned, creating a primary key that could unite the data sets was followed (see table `allKeys_df`). This key contains the beginning year, month, state, and a ticker to differentiate events with the same year, month and state.  
 
@@ -133,7 +133,7 @@ Another example of the usage of this package is this plot that evidences the tre
 
 ```
 
-### Example 3: Considers individual query of specifi event 
+### Example 3: Considers individual query of specific event 
 
 Finally, another example from this data show that it can be used to query individual event such as the Orlando nightclub shooting in 2016. 
 
@@ -155,6 +155,6 @@ data("disastCasualties_df")
 
 The need for integrated and queryable data in disaster management is essential for better emergency response and prevention of loss. However, the data that is currently available tends to be disperse, in different formats, heterogeneously distributed and owned by different stakeholders and agencies [@li2019;@Faiella2022; @Ortmann; @Nunavath2017]. Consequently, interventions and prevention programs are taking longer to develop given the lack of data and decisions become difficult to take given the limited information avaialble [@Nunavath2017. Therefore, this study aimed at uniting  available heterogeneously dispersed data from three different sources  together to improve information accessibility and analysis. 
 
-Moreoever, the cleaned and harmonized data sets can be used to relate mass casualties to their short and long-term consequences beyond the damage itself, because other data sets can be easily joined if there is state and county level information. Therefore, mental and physical health consequences, economic loss, or other variables of interest can be analyzed taking into account this already cleaned and joined data. 
+Moreover, the cleaned and harmonized data sets can be used to relate mass casualties to their short and long-term consequences beyond the damage itself, because other data sets can be easily joined if there is state and county level information. Therefore, mental and physical health consequences, economic loss, or other variables of interest can be analyzed taking into account this already cleaned and joined data. 
 
 ## References
