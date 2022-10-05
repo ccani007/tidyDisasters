@@ -2,4 +2,3 @@
 
 * Added a `NEWS.md` file to track changes to the package.
 * Checked all the requirements for CRAN
-* testing git user
