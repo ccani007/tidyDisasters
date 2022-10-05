@@ -17,7 +17,7 @@ state, and number of disasters in that particular place}
 data(disastLocations_df)
 }
 \description{
-This data contains the the states and counties where disasters
+This data contains the states and counties where disasters
 have happened across the USA.
 }
 \keyword{datasets}

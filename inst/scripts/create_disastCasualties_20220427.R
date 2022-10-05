@@ -8,7 +8,9 @@
 library(tidyDisasters)
 library(tidyverse)
 
-data("clean_emdat")
+clean_emdat <- readRDS(
+  file = "inst/extdata/clean_emdat.RDS"
+)
 # 3101152 x 9
 data("allKeys_df")
 # 498,188 x 4

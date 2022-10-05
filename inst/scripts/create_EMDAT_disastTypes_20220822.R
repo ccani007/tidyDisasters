@@ -10,11 +10,13 @@
 #  EMDAT and Dr. Mark Macgowan's and Catalina Canizares's opinion regarding the 
 #  hazard cluster it should belong to
 
+library(readxl)
 library(tidyDisasters)
 library(tidyverse)
 
-# Loading the data we need to o the matches
+# Loading the data we need to do the matches
 
+clean_emdat <- load("inst/extdata/clean_emdat.rda")
 data("clean_emdat")
 # 3101152 x 9
 

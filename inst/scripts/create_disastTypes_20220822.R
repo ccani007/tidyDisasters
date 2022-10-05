@@ -5,7 +5,7 @@
 # Now that we have a unique key for all events (by state, year, and month), we
 #  will create a table of the type of disasters based on the classification 
 #  of the Hazard Definition and Classification Review Technical Report
- published by the UN Office for Disaster Risk Reduction (2020)
+#  published by the UN Office for Disaster Risk Reduction (2020)
 #  Annex 6 page 72. 
 #  (https://www.undrr.org/publication/hazard-definition-and-classification-review)
 
@@ -38,8 +38,8 @@ hazard_report <-
 #  are going to assume that all flood are meteorological and hydrological 
 #  for the future we will check which floods are technological.
 
-# Called the clean EMDAT, FEMA and keys data to create the data sets
-data("clean_emdat")
+# Called the clean EMDAT, FEMA and keys data to create the data sets. 
+clean_emdat <- readRDS(file = "inst/extdata/clean_emdat.RDS")
 # 3101152 x 9
 
 clean_fema <- readRDS(file = "inst/extdata/clean_fema.RDS")
