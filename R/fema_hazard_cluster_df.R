@@ -1,6 +1,6 @@
 #' @title fema_hazard_cluster_df
 #'
-#' @description This data contains contains the type of disasters reported 
+#' @description This data contains the type of disasters reported 
 #'   by FEMA  and the matched hazard cluster based on the classification  of 
 #'   the Hazard Definition and  Classification Review Technical Report 
 #'   published by the UN Office for  Disaster Risk Reduction (2020) 

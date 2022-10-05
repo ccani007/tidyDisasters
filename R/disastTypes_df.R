@@ -1,6 +1,6 @@
 #' @title disastTypes_df
 #'
-#' @description This data contains contains the type of disasters reported 
+#' @description This data contains the type of disasters reported 
 #'   by FEMA and EMDAT based on the classification  of the Hazard Definition and
 #'   Classification Review Technical Report  published by the UN Office for 
 #'   Disaster Risk Reduction (2020)
@@ -19,7 +19,7 @@
 #'   \item{hazard_type}{It is the related broad classification disaster type
 #'     The category was assigned based on the Technical report by matching it to 
 #'     the hazard cluster that was assigned by the authors}
-#'   \item{hazard_cluster}{It is the related sub type classification assigned by 
+#'   \item{hazard_cluster}{It is the related subtype classification assigned by 
 #'     the authors according to the original incident type reported by FEMA or 
 #'     EMDAT, and according to the broad classification that was already 
 #'     assigned}

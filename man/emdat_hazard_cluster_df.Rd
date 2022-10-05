@@ -20,7 +20,7 @@ and acciording to the broad classification that was already assigned}
 data(fema_hazard_cluster_df)
 }
 \description{
-This data contains contains the type of disasters reported
+This data contains the type of disasters reported
 by EMDAT  and the matched hazard cluster based on the classification  of
 the Hazard Definition and  Classification Review Technical Report
 published by the UN Office for  Disaster Risk Reduction (2020)

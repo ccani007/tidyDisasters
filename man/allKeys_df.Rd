@@ -10,7 +10,7 @@ A tibble with
 \item{femaID}{The original ID given by FEMA to each disaster}
 \item{emdatID}{The original ID given by EMDAT to each disaster}
 \item{smashedID}{The FEMA and EMDAT IDs concatenated together}
-\item{eventKEY}{The created ID created by the authors to inform the year,
+\item{eventKEY}{The ID created by the authors to inform the year,
 state, and number of disasters in that particular place}
 }
 }

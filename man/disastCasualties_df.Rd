@@ -19,9 +19,10 @@ location}
 data(disastCasualties_df)
 }
 \description{
-This data contains the number of killed and wounded per event.
+This data contains the number of people
+killed and wounded per event.
 It is relevant to note that the number of people killed and wounded
-correspond to the total casualties forthe whole event, it does not relate
+correspond to the total casualties for the whole event, it does not relate
 to the particular number of casualties in each county or state
 }
 \keyword{datasets}
