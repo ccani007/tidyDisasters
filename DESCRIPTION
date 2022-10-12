@@ -26,7 +26,8 @@ Authors@R:
       )
     )
 Description: 
-     Pre-processed data that contains a queryable data set with FEMA and EMDAT 
+     Pre-processed data that contains a queryable data set with Federal
+     Emergency Management Agency (FEMA) and Emergency Events Database (EMDAT)
      merged. The data set contains the reported natural and human made disasters 
      that report 3 or more people killed in the United States of America.
 Encoding: UTF-8
