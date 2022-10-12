@@ -38,12 +38,12 @@ Depends:
     R (>= 3.5)
 LazyData: false
 Suggests: 
-    rUM,
     conflicted,
-    tidyverse,
-    knitr,
-    rmarkdown, 
-    lubridate, 
     gghighlight
+    knitr,
+    lubridate, 
+    rmarkdown, 
+    rUM,
+    tidyverse,
 VignetteBuilder: knitr
 License: MIT + file LICENSE
