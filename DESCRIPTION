@@ -39,7 +39,7 @@ Depends:
 LazyData: false
 Suggests: 
     conflicted,
-    gghighlight
+    gghighlight,
     knitr,
     lubridate, 
     rmarkdown, 
