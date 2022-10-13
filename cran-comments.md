@@ -9,7 +9,8 @@ cleanly on ubuntu R devel, R release, and R old release; this also builds cleanl
 windows and macOS R release.
 
 ## Resubmission 2 (v 0.1.0)
-R CMD check results: 0 ERRORs, 0 WARNINGs, and 0 NOTEs.
+
+**R CMD check results:** 0 ERRORs, 0 WARNINGs, and 0 NOTEs.
 
 **Comments**: U.L. marked the following problem:
 - Found the following (possibly) invalid URL:
