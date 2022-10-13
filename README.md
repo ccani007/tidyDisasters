@@ -7,7 +7,7 @@ date: 2022-03-16
 # tidyDisasters
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/ccani007/tidyDisasters/workflows/R-CMD-check/badge.svg)](https://github.com/ccani007/tidyDisasters/actions)
+![R-CMD-check](https://github.com/ccani007/tidyDisasters/workflows/R-CMD-check/badge.svg)
 <!-- badges: end -->
 
 The goal of `tidyDisasters` is to create a queryable data set that unites information from  the Centre for Research on the Epidemiology of Disasters (Belgium) EMDAT, the National Consortium for the Study of Terrorism and Responses to Terrorism (United States of America) GTD, and FEMA's National Emergency Management Information System (United States of America); three sources that complement each other. Whereas FEMA reports the county-level location of a natural event, EMDAT estimates the number of killed and wounded of that natural event, and the GTD contains the terrorism events. 
@@ -15,7 +15,7 @@ The goal of `tidyDisasters` is to create a queryable data set that unites inform
 
 ## Installation
 
-Our package is currently in infancy, so we are not yet ready to submit to CRAN. The development version of `tidyDisasters::` can be installed from this GitHub repository by
+Our package is currently being revised by CRAN. The development version of `tidyDisasters::` can be installed from this GitHub repository by
 
 ``` r
 library(devtools)

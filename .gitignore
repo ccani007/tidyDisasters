@@ -89,3 +89,4 @@ _bookdown_files/
 *.Zip
 *.ZIP
 inst/doc
+docs
