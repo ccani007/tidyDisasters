@@ -146,7 +146,7 @@ femaRaw2_df %>%
 #   southwast, daily rainfall is common, so these fires can usually be 
 #   contained within a week or so.
 # https://mashable.com/article/wildfire-burn-how-long-climate-change
-# https://www.naplesnews.com/story/news/local/florida/2019/04/19/wildfire-season-starts-slow-florida-concern-grows-panhandle/3427721002/
+# https://www.naplesnews.com/story/news/local/florida/2019/04/19/wildfire-season-starts-slow-florida-concern-grows-panhandle/3427721002
 femaRaw2_df %>% 
 	filter(incident_type == "Fire") %>% 
 	mutate(duration = end_date - begin_date) %>% 

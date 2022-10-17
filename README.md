@@ -21,7 +21,7 @@ Our package is currently being revised by CRAN. The development version of `tidy
 library(devtools)
 install_github("ccani007/tidyYRBS")
 ```
-Please note that using compiled code from GitHub may require your computer to have additional software ([Rtools](https://cran.r-project.org/bin/windows/Rtools/rtools40.html) for Windows or [Xcode](https://developer.apple.com/xcode/) for Mac). Also note that installing this development version may result in some errors. If you find problems, please submit a [bug ticket](https://github.com/ccani007/tidyYRBS/issues).
+Please note that using compiled code from GitHub may require your computer to have additional software ([Rtools](https://cran.r-project.org/bin/windows/Rtools/rtools40.html) for Windows or [Xcode](https://developer.apple.com/xcode) for Mac). Also note that installing this development version may result in some errors. If you find problems, please submit a [bug ticket](https://github.com/ccani007/tidyYRBS/issues).
 
 ## Examples
 
