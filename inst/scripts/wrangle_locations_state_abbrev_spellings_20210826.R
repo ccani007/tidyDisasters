@@ -147,7 +147,7 @@ emdatWrangled1_df <-
 	#   flood listed as being in the "Blue Ridge Mountain Canyon" in July of 1995
 	#   is the same as the "Madison County Flood" in June of 1995
 	# https://dailyprogress.com/community/greenenews/news/remembering-the-1995-flood/article_6edab9ae-b629-11ea-ae49-7f15490e6a62.html
-	# http://www.glenallenweather.com/upload/Floods/MadisonCo1995.pdf
+	# https://www.glenallenweather.com/upload/Floods/MadisonCo1995.pdf
 	# https://journals.ametsoc.org/view/journals/wefo/14/3/1520-0434_1999_014_0384_tmcvff_2_0_co_2.xml
 	mutate(
 		Location = case_when(
