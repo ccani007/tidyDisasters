@@ -1,4 +1,9 @@
+title: tidyDisasters
 url: ~
 template:
   bootstrap: 5
+  bootswatch: flatly
 
+authors:
+  Gabriel Odom:
+    href: https://gabriel.quarto.pub/home
