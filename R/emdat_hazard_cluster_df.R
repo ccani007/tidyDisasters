@@ -1,7 +1,7 @@
 #' @title emdat_hazard_cluster_df
 #'
 #' @description This data contains the type of disasters reported 
-#'   by EMDAT  and the matched hazard cluster based on the classification  of 
+#'   by EMDAT and the matched hazard cluster based on the classification  of 
 #'   the Hazard Definition and  Classification Review Technical Report 
 #'   published by the UN Office for  Disaster Risk Reduction (2020) 
 #'   Annex 6 page 72. The matching was done by Dr. Mark Macgowan and 
