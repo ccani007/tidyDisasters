@@ -1,7 +1,12 @@
 ---
 title: "Using the Tidy Disaster Database"
 author: "Catalina Cañizares, Mark J. Macgowan, Gabriel Odom"
+output: rmarkdown::html_vignette
 date: 2022-03-16
+vignette: >
+  %\VignetteIndexEntry{Using the Tidy Disaster Database}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
 # tidyDisasters
@@ -35,9 +40,9 @@ data("disastLocations_df")
 data("disastTypes_df")
 
 disastTypes_df %>%
-  left_join(disastDates_df) %>%
-  left_join(disastCasualties_df) %>% 
-  left_join(disastLocations_df) %>% 
+  left_join(disastDates_df, by = "eventKey") %>%
+  left_join(disastCasualties_df, by = "eventKey") %>% 
+  left_join(disastLocations_df, by = "eventKey") %>% 
   mutate(Year = year(eventStart)) %>% 
   filter(Year == 2017 & state == "TX" & incident_type == "Hurricane") %>% 
   distinct() %>% 
@@ -52,8 +57,8 @@ since the 90s: we observe the 2000-2001 Western United States wildfires.
 
 fires_df <- 
 	disastLocations_df %>%
-  left_join(disastTypes_df) %>%
-  left_join(disastDates_df) %>%
+  left_join(disastTypes_df, by = "eventKey") %>%
+  left_join(disastDates_df, by = "eventKey") %>%
   mutate(Year = year(eventStart)) %>% 
   filter(hazard_cluster == "Environmental degradation (Forestry)") %>%
   group_by(state, county, Year) %>%
@@ -79,8 +84,10 @@ ggplot(fires_df) +
 ```
 
 
+# Conclusion
 
-
+This package aims at uniting  available heterogeneously dispersed data from three different sources   to improve information accessibility and analysis. As can be seen in this previous examples, by uniting the datasets of interest questions exploring the impact of natural disasters can be easily solved. 
+Another advantage of this package is that the data can be used to relate mass casualties to their short and long-term consequences beyond the damage itself. Using this comprehensive database, it is possible to relate natural and man-made disasters in the US to other datasets of interest, such as mental and physical health outcomes, economic and political metrics, or other data sets of interest, simply by matching on state, county, and date range. 
 
 <!-- Last updated: 2022-11-07 -->
 

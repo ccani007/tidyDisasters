@@ -61,7 +61,8 @@ data("disastLocations_df")
 data("disastTypes_df")
 data("disastDates_df")
 
-disastLocations_df %>%
+fires_df <- 
+	disastLocations_df %>%
   left_join(disastTypes_df) %>%
   left_join(disastDates_df) %>%
   mutate(Year = year(eventStart)) %>% 
@@ -69,27 +70,24 @@ disastLocations_df %>%
   group_by(state, county, Year) %>%
   summarise(Fire = n() >= 1L, .groups = "keep") %>%
   group_by(Year) %>%
-  summarise(Count = sum(Fire)) %>%
-  ggplot() +
+  summarise(Count = sum(Fire))
+  
+ggplot(fires_df) +
+  theme_classic() +
+  theme(axis.text.x = element_text(size = 10, angle = 90)) +
   aes(x = Year, y = Count) +
   labs(
     title = "Number of Counties Affected by Fires Since the 90s",
     caption = "Data from the tidyDisasters R Package",
     y = "No. Counties affected by fires"
   ) +
-  theme_classic() +
-  theme(axis.text.x = element_text(size = 10, angle = 90)) +
-  scale_x_continuous(breaks = c(1990:2020)) +
-  scale_y_continuous(breaks = seq(0,1000,100))+
-  geom_linerange(data = . %>%  filter(Year == 2000), 
-                 aes( ymin = 0, ymax = Count), 
-                 color="grey80", linetype="dashed") +
-  geom_point(size=2, color="#DA3330")
-  
+  scale_x_continuous(breaks = 1990:2020) +
+  scale_y_continuous(breaks = seq(0, 1000, by = 100)) +
+	geom_vline(xintercept = 2000) +
+	geom_vline(xintercept = 2001) +
+  geom_point(size = 2, color = "#DA3330")
+
 ```
-
-
-
 
 
 <!-- Last updated: 2022-11-04 -->
