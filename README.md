@@ -50,7 +50,7 @@ disastTypes_df %>%
 ```
 This is another example that shows the number of counties affected by fires 
 since the 90s.  
-We found the The 2000-2001 Western United States wildfires. 
+We found the the 2000-2001 Western United States wildfires. 
 
 ``` r
 library(tidyDisasters)
