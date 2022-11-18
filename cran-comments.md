@@ -14,6 +14,7 @@ content as appropriate.
 - Deleted trailing slashes and changed http to https.  
 
 
+
 ## Resubmission 2 (v 0.1.0)
 
 **R CMD check results:** 0 ERRORs, 0 WARNINGs, and 0 NOTEs.
