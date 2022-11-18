@@ -3,9 +3,9 @@ url: https://ccani007.github.io/tidyDisasters/
 template:
   bootstrap: 5
   bootswatch: flatly
-
 authors:
   Gabriel Odom:
     href: https://gabriel.quarto.pub/home
   Catalina Cañizares:
     href: https://github.com/ccani007
+
