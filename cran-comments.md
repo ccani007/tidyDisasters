@@ -2,6 +2,16 @@
 
 **R CMD check results:** 0 ERRORs, 0 WARNINGs, and 0 NOTEs.
 
+**Comments**: U.L. marked the following problem:
+- This URL redirects:
+https://www.undrr.org/publication/hazard-definition-and-classification-review
+- Please change http --> https, add trailing slashes, or follow moved
+content as appropriate.
+
+**Response**: 
+
+- Deleted the link and redirected users to the official manual.   
+- Deleted trailing slashes and changed http to https.  
 
 
 ## Resubmission 2 (v 0.1.0)
