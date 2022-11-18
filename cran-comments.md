@@ -1,5 +1,7 @@
 ## Resubmission 3 (v 0.1.1)
 
+**R CMD check results:** 0 ERRORs, 0 WARNINGs, and 0 NOTEs.
+
 
 
 ## Resubmission 2 (v 0.1.0)
