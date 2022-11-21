@@ -6,8 +6,14 @@
 -   Found the following (possibly) invalid URLs:
 URL: https://developer.apple.com/xcode (moved to https://developer.apple.com/xcode/)
 URL:https://www.undrr.org/publication/hazard-definition-and-classification-review
+-Please change http --> https, add trailing slashes, or follow moved
 
-Please change http --> https, add trailing slashes, or follow moved
+**Response**: 
+
+- Added trailing slash to xcode link in the readme and vignette
+- Erased undrr link from every script and documentation and redirected the user to the official manual. 
+- Added trailing slashes when needed. 
+- Double checked for http and not found. 
 
 ## Resubmission 3 (v 0.1.1)
 
