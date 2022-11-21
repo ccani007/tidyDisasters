@@ -22,6 +22,6 @@
 #'     data sets reports}
 #'   \item{hazard_cluster}{It is the related sub type classification assigned by 
 #'     the authors according to the original incident type reported by EMDAT
-#'     and acciording to the broad classification that was already assigned}
+#'     and according to the broad classification that was already assigned}
 #' }
 "emdat_hazard_cluster_df"

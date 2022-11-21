@@ -14,7 +14,7 @@ FEMA and GTD}
 data sets reported}
 \item{hazard_cluster}{It is the related sub type classification assigned by
 the authors according to the original incident type reported by FEMA
-and acciording to the broad classification that was already assigned}
+and according to the broad classification that was already assigned}
 }
 }
 \usage{
