@@ -1,3 +1,14 @@
+## Resubmission 4 (v 0.1.1)
+
+**R CMD check results:** 0 ERRORs, 0 WARNINGs, and 0 NOTEs.
+
+**Comments**: U.L. marked the following problem:
+-   Found the following (possibly) invalid URLs:
+URL: https://developer.apple.com/xcode (moved to https://developer.apple.com/xcode/)
+URL:https://www.undrr.org/publication/hazard-definition-and-classification-review
+
+Please change http --> https, add trailing slashes, or follow moved
+
 ## Resubmission 3 (v 0.1.1)
 
 **R CMD check results:** 0 ERRORs, 0 WARNINGs, and 0 NOTEs.

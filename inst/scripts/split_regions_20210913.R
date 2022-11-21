@@ -261,7 +261,7 @@ missingCounties2_df <-
 			region_id == "1992-0271-USA_0003" ~ "honolulu",
 			region_id == "1993-0432-USA_0001" ~ "kitsap",
 			region_id == "1993-0432-USA_0001" ~ "kitsap",
-			# https://www.azcentral.com/story/news/local/arizona/2015/09/15/brief-history-arizonas-deadly-flash-floods/72335682
+			# https://www.azcentral.com/story/news/local/arizona/2015/09/15/brief-history-arizonas-deadly-flash-floods/72335682/
 			region_id == "1997-0172-USA_0001" ~ "coconino",
 			region_id == "1999-0298-USA_0001" ~ "kenedy",
 			region_id == "2003-0139-USA_0006" ~ "washington",

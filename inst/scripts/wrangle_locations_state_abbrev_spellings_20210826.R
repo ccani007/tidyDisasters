@@ -958,7 +958,7 @@ emdatLocWrangled4_df <-
 		    "MO, MD, OK, IN, MI, NM, OH, VA",
 		  TRUE ~ Location
 		),
-		# https://www.azcentral.com/story/news/local/arizona/2017/07/16/payson-flash-flood-results-four-deaths/482805001
+		# https://www.azcentral.com/story/news/local/arizona/2017/07/16/payson-flash-flood-results-four-deaths/482805001/
 		Location = case_when(
 			event_id == "2017-0282-USA" ~ 
 				"water wheel falls [gila], AZ",

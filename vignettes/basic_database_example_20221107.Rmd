@@ -22,7 +22,7 @@ Our package is currently being revised by CRAN. The development version of `tidy
 library(devtools)
 install_github("ccani007/tidyDisasters")
 ```
-Please note that using compiled code from GitHub may require your computer to have additional software ([Rtools](https://cran.r-project.org/bin/windows/Rtools/rtools40.html) for Windows or [Xcode](https://developer.apple.com/xcode) for Mac). Also note that installing this development version may result in some errors. If you find problems, please submit a [bug ticket](https://github.com/ccani007/tidyDisasters/issues).
+Please note that using compiled code from GitHub may require your computer to have additional software ([Rtools](https://cran.r-project.org/bin/windows/Rtools/rtools40.html) for Windows or [Xcode](https://developer.apple.com/xcode/) for Mac). Also note that installing this development version may result in some errors. If you find problems, please submit a [bug ticket](https://github.com/ccani007/tidyDisasters/issues).
 
 ## Examples
 
@@ -89,6 +89,6 @@ ggplot(fires_df) +
 This package aims at uniting  available heterogeneously dispersed data from three different sources   to improve information accessibility and analysis. As can be seen in this previous examples, by uniting the datasets of interest questions exploring the impact of natural disasters can be easily solved. 
 Another advantage of this package is that the data can be used to relate mass casualties to their short and long-term consequences beyond the damage itself. Using this comprehensive database, it is possible to relate natural and man-made disasters in the US to other datasets of interest, such as mental and physical health outcomes, economic and political metrics, or other data sets of interest, simply by matching on state, county, and date range. 
 
-<!-- Last updated: 2022-11-07 -->
+<!-- Last updated: 2022-11-21 -->
 
 

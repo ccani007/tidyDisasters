@@ -41,7 +41,7 @@ system.time(
 # This code tells R the design elements in the survey (PSU, Weights, Strata)
 ## It should be used for analysis because ignoring the PSUs will tend to yield 
 ## standard errors that are too small, leading to false positives when doing 
-## significance tests (https://stats.oarc.ucla.edu/r/seminars/survey-data-analysis-with-r).
+## significance tests (https://stats.oarc.ucla.edu/r/seminars/survey-data-analysis-with-r/).
 
 hsWeighted_SurvDes <- svydesign(
 	id = ~PSU,

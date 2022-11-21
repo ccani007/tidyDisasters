@@ -46,5 +46,5 @@ Suggests:
     tidyverse,
 VignetteBuilder: knitr
 License: MIT + file LICENSE
-BugReports: https://github.com/ccani007/tidyDisasters/issues
+BugReports: https://github.com/ccani007/tidyDisasters/issues/
 URL: https://ccani007.github.io/tidyDisasters/

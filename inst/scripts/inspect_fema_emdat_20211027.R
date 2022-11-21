@@ -215,7 +215,7 @@ dead_EMDAT <-
   mutate(total = sum(c_across(where(is.numeric)), na.rm = TRUE)) %>% 
   arrange(desc(total))
 
-# We are finding similar results: https://www.prb.org/resources/which-types-of-disasters-are-the-deadliest-in-the-u-s-the-answer-is-surprising
+# We are finding similar results: https://www.prb.org/resources/which-types-of-disasters-are-the-deadliest-in-the-u-s-the-answer-is-surprising/
  
 #### Which is the disaster that injures more people in the USA ####
 
