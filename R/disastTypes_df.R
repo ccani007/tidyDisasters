@@ -4,7 +4,6 @@
 #'   by FEMA and EMDAT based on the classification  of the Hazard Definition and
 #'   Classification Review Technical Report  published by the UN Office for 
 #'   Disaster Risk Reduction (2020)
-#'  <https://www.undrr.org/publication/hazard-definition-and-classification-review>  
 #'   
 #' @docType data
 #'
