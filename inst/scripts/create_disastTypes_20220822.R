@@ -7,7 +7,6 @@
 #  of the Hazard Definition and Classification Review Technical Report
 #  published by the UN Office for Disaster Risk Reduction (2020)
 #  Annex 6 page 72. 
-#  (https://www.undrr.org/publication/hazard-definition-and-classification-review)
 
 library(tidyDisasters)
 library(readxl)

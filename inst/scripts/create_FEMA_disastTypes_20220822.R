@@ -5,7 +5,6 @@
 # We will create a table of the type of disasters  based on the classification 
 #  of the Hazard Definition and Classification Review Technical Report
 #  published by the UN Office for Disaster Risk Reduction (2020)
-#  (https://www.undrr.org/publication/hazard-definition-and-classification-review)
 # This script will create a table matching the type of disasters reported by 
 #  FEMA and Mark Macgowan and Catalina Canizares opinion regarding the hazard
 #  cluster it should belong to
