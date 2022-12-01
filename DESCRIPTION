@@ -1,5 +1,5 @@
 Package: tidyDisasters
-Title: Disaster Data Set Including FEMA, EMDAT and GTD Information
+Title: A relational database of FEMA, EMDAT, and GTD disaster data sets
 Version: 0.1.1
 Authors@R: 
     c(
